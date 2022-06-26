@@ -13,6 +13,10 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
+    @RequestMapping("/api/registration/confirm?token=")
+    public String homeDisplay() throws Exception{
+        return "index.html";
+    }
 
     @PostMapping()
     public String register(@RequestBody RegistrationRequest request){
