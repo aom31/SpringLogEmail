@@ -23,7 +23,7 @@ public class RegistrationService {
 
     private final EmailSender emailSender;
 
-    @Transactional
+
     public String register(RegistrationRequest request) {
         boolean isValidateEmail = emailValidator.test(request.getEmail());
         if(!isValidateEmail){
@@ -58,9 +58,10 @@ public class RegistrationService {
         }
 
         confirmationTokenService.setConfirmedAt(token);
-        appUserService.enableAppUser(confirmationToken.getAppUser().getEmail());
+        appUserService.enableAppUser(
+                confirmationToken.getAppUser().getEmail());
 
-        return "confirmed";
+        return "index";
     }
 
     private String buildEmail(String name, String link) {

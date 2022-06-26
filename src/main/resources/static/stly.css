@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+/*Add google front*/
+
+/*all class using same variable*/
+:root{
+    /*define variable button*/
+    --accent : #709BDB; /*color botton*/
+    --accentHover : #709b70; /*when cik mouse*/
+    --dark75 :rgba(43, 43, 44, 0.85);
+    --light : #FFFFFF;
+    --transition : all 0.2s ease 0s  /*define delay motion animation*/
+}
+
+/*All section*/
+*{
+    /*clear margin and padding*/
+    box-sizing: border-box;
+    margin :0;
+    padding: 0;
+
+}
+html, body{
+    height: 100%;   /*fix height screen when scroll*/
+    overflow: auto;
+}
+
+body{
+    /*gradient shade color */
+    /* background: linear-gradient(
+        var(--dark75), var(--dark75)
+    ),
+    url(./image/background_web.jpg); */
+    background-image: url(./image/background_web.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /*fix scale screen photo backgound*/
+
+}
+
+a, button{
+    font-family: "Kanit";
+    color: var(--light);
+}
+p{
+    font-family: "Kanit";
+    color: black;
+}
+a, button ,.logo{
+    cursor: pointer;      /*hand cursor of mouse*/
+}
+main{
+    height: 100;
+    display: grid;   /*grid 6 columns*/
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+
+}
+header{
+    grid-column: 2/ span 8;   /*header in nav bar start column 2 and other to last coloumn*/
+}
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+/*class in nav bar*/
+.link_navs{
+    margin-left: 10%;
+
+} 
+.link_navs a, .link_navs button{
+    font-size: 1.2em ;
+    font-weight: 400;
+}
+.link_navs a{
+    margin-right: 80px;
+}
+.link_navs a:hover{
+    color: #709b70; /*when cilk mouse*/
+}
+.button_log, .button_sign{
+    border: none;
+    background-color: #709BDB;
+    padding: 3px 12px;
+}
+/*end navigation bar*/
+
+/*content center*/
+.info{
+    grid-column: 3 /span 4;
+    margin-top: 10%;
+    text-align: center;         /*back-end word content first*/
+}
+.content_f1{
+    font-family: "Kanit";
+    color: #FFFFFF;
+    font-size: 3.5rem;
+}
+.content_f2{
+    font-family: "Kanit";
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin-top: 60%;
+}
+.icons{
+    margin-top: 5%;            /*space from top screen*/
+    display:  flex;
+    
+}
+.icon_img{
+    margin-right: 90px;        /*margin is distance*/
+  
+}
+.icon_img img{
+    width: 120px;
+    height: 120px;  
+}
+.feature{
+    grid-column: 1/ span 10;
+    display: flex;
+    margin-top: 15%;
+    background-color: antiquewhite;
+    padding: 10px 10px 5px 220px ;   /*distance in bar   top right bottom left*/
+}
+.feature_info{
+    margin-right: 110px;
+}
+.feature_info1{
+    display: flex;
+    /*distance  top right bottom left*/
+    /* margin: 0px 30px 0px 30px; */
+}
+.feature_info1 img{
+    margin-right: 30px;
+    
+}
+.feature_infos p{
+    margin: 0px 10px 0px 20px;
+    font-weight: lighter;
+}
+/*Responsive website*/
+@media only screen and (max-width:1100px){
+    .icon_img{
+        height: 200px;
+        width: auto;
+    }
+    .content_f1, .content_f2{
+        font-size: 100px;
+        width: auto;
+    }
+    .feature_info, .feature_info1{
+        grid-column: 1/ span10;
+    }
+}
+@media only screen and (max-width:800px) {
+    .info{
+        grid-column: 2/ span8;
+    }
+    .feature{
+        flex-direction: column;
+    }
+}
